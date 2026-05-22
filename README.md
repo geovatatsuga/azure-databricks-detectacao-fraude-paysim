@@ -265,16 +265,7 @@ No Random Forest, o PR-AUC subiu de `0.7901` para `0.9947`, e o valor financeiro
 
 ![Execucoes MLflow](images/databricks_mlflow_runs.png)
 
-## Seguranca
 
-Este repositorio nao deve conter contas reais de armazenamento, emails pessoais, chaves, tokens, segredos, strings de conexao ou arquivos como `kaggle.json`.
-
-As configuracoes publicas ficam em `src/config.py` com placeholders. Credenciais devem ser carregadas no Databricks por segredos, por exemplo:
-
-```python
-dbutils.secrets.get(scope="kaggle", key="username")
-dbutils.secrets.get(scope="kaggle", key="key")
-```
 
 ## Execucao
 
