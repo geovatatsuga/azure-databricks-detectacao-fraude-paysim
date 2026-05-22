@@ -1,0 +1,12 @@
+nome_coluna,tipo_dado,permite_nulo,descricao,origem_ou_expressao
+total_transacoes,long,false,Total de transacoes,count(*)
+total_fraudes,long,true,Total de transacoes fraudulentas confirmadas,sum(isFraud)
+valor_total_transacionado,double,true,Valor total transacionado,sum(amount)
+valor_total_fraude,double,true,Valor total das transacoes fraudulentas,sum(amount where isFraud = 1)
+ticket_medio_geral,double,true,Valor medio considerando todas as transacoes,avg(amount)
+ticket_medio_fraude,double,true,Valor medio das transacoes fraudulentas,avg(amount where isFraud = 1)
+ticket_medio_normal,double,true,Valor medio das transacoes nao fraudulentas,avg(amount where isFraud = 0)
+total_flagged_fraud,long,true,Total de transacoes marcadas como fraude pelo simulador,sum(isFlaggedFraud)
+taxa_fraude_percentual,double,true,Taxa percentual de fraude confirmada,total_fraudes / total_transacoes * 100
+taxa_flagged_percentual,double,true,Taxa percentual de fraudes marcadas pelo simulador,total_flagged_fraud / total_transacoes * 100
+dataset,string,false,Nome do dataset,literal 'PaySim'

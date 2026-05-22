@@ -1,0 +1,11 @@
+nome_coluna,tipo_dado,permite_nulo,descricao,origem_ou_expressao
+model_type,string,false,Nome do classificador ou familia do modelo,Chave de comparacao dos resultados
+baseline_valor_fraude_detectado,double,true,Valor de fraude detectado pelo modelo baseline,sum(amount where label = 1 and prediction = 1) no baseline
+baseline_valor_fraude_nao_detectado,double,true,Valor de fraude nao detectado pelo modelo baseline,sum(amount where label = 1 and prediction = 0) no baseline
+baseline_taxa_valor_detectado,double,true,Percentual do valor fraudulento detectado pelo baseline,baseline_valor_fraude_detectado / valor total de fraude no teste
+features_valor_fraude_detectado,double,true,Valor de fraude detectado pelo modelo com features,sum(amount where label = 1 and prediction = 1) em engineered_features
+features_valor_fraude_nao_detectado,double,true,Valor de fraude nao detectado pelo modelo com features,sum(amount where label = 1 and prediction = 0) em engineered_features
+features_taxa_valor_detectado,double,true,Percentual do valor fraudulento detectado pelo modelo com features,features_valor_fraude_detectado / valor total de fraude no teste
+valor_fraude_detectado_a_mais,double,true,Valor adicional de fraude detectado apos usar features,features_valor_fraude_detectado - baseline_valor_fraude_detectado
+valor_fraude_perdido_a_menos,double,true,Reducao do valor de fraude nao detectado apos usar features,baseline_valor_fraude_nao_detectado - features_valor_fraude_nao_detectado
+ganho_taxa_valor_detectado,double,true,Aumento na taxa de valor fraudulento detectado apos usar features,features_taxa_valor_detectado - baseline_taxa_valor_detectado

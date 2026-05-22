@@ -1,0 +1,25 @@
+nome_coluna,tipo_dado,permite_nulo,descricao,origem_ou_expressao
+step,int,true,Unidade de tempo da transacao simulada,cast(step as int)
+type,string,true,Tipo da transacao como CASH_IN CASH_OUT PAYMENT TRANSFER ou DEBIT,cast(type as string)
+amount,double,true,Valor da transacao,cast(amount as double)
+nameOrig,string,true,Identificador da conta de origem,cast(nameOrig as string)
+oldbalanceOrg,double,true,Saldo da conta de origem antes da transacao,cast(oldbalanceOrg as double)
+newbalanceOrig,double,true,Saldo da conta de origem depois da transacao,cast(newbalanceOrig as double)
+nameDest,string,true,Identificador da conta de destino,cast(nameDest as string)
+oldbalanceDest,double,true,Saldo da conta de destino antes da transacao,cast(oldbalanceDest as double)
+newbalanceDest,double,true,Saldo da conta de destino depois da transacao,cast(newbalanceDest as double)
+isFraud,int,true,Flag alvo indicando fraude confirmada,cast(isFraud as int)
+isFlaggedFraud,int,true,Flag indicando transacao marcada como fraude pelo simulador,cast(isFlaggedFraud as int)
+origin_balance_error_signed,double,true,Diferenca com sinal entre saldo esperado e saldo registrado na origem,"(oldbalanceOrg - amount) - newbalanceOrig"
+origin_balance_error_abs,double,true,Inconsistencia absoluta do saldo da origem,abs(origin_balance_error_signed)
+dest_balance_error_signed,double,true,Diferenca com sinal entre saldo esperado e saldo registrado no destino,"(oldbalanceDest + amount) - newbalanceDest"
+dest_balance_error_abs,double,true,Inconsistencia absoluta do saldo do destino,abs(dest_balance_error_signed)
+amount_log,double,true,Valor da transacao transformado em log,log1p(amount)
+is_zero_balance_origin_before,int,false,Flag indicando saldo zero na origem antes da transacao,case when oldbalanceOrg = 0 then 1 else 0 end
+is_zero_balance_origin_after,int,false,Flag indicando saldo zero na origem depois da transacao,case when newbalanceOrig = 0 then 1 else 0 end
+is_zero_balance_dest_before,int,false,Flag indicando saldo zero no destino antes da transacao,case when oldbalanceDest = 0 then 1 else 0 end
+is_zero_balance_dest_after,int,false,Flag indicando saldo zero no destino depois da transacao,case when newbalanceDest = 0 then 1 else 0 end
+is_cash_out_or_transfer,int,false,Flag para tipos de transacao associados a fraude no PaySim,case when type in ('CASH_OUT' 'TRANSFER') then 1 else 0 end
+is_transfer,int,false,Flag indicando transacao do tipo TRANSFER,case when type = 'TRANSFER' then 1 else 0 end
+is_cash_out,int,false,Flag indicando transacao do tipo CASH_OUT,case when type = 'CASH_OUT' then 1 else 0 end
+data_source,string,false,Marcador de linhagem do dataset,literal 'paysim'

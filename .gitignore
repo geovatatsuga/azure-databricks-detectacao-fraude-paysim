@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Secrets
+.env
+kaggle.json
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Databricks
+.databricks/
+*.dbc
+
+# Data
+data/*.csv
+data/*.parquet
+data/*.delta
+data/raw/
+data/processed/
+
+# Large files
+*.zip
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,10 @@
+nome_coluna,tipo_dado,permite_nulo,descricao,origem_ou_expressao
+type,string,true,Tipo da transacao,groupBy(type)
+total_transacoes,long,false,Total de transacoes por tipo,count(*)
+total_fraudes,long,true,Total de fraudes confirmadas por tipo,sum(isFraud)
+valor_total,double,true,Valor total transacionado por tipo,sum(amount)
+valor_medio,double,true,Valor medio transacionado por tipo,avg(amount)
+amount_log_medio,double,true,Media do valor transformado em log por tipo,avg(amount_log)
+total_flagged_fraud,long,true,Total de transacoes marcadas como fraude pelo simulador por tipo,sum(isFlaggedFraud)
+taxa_fraude_percentual,double,true,Taxa de fraude confirmada por tipo,total_fraudes / total_transacoes * 100
+percentual_transacoes,double,true,Participacao do tipo no total de transacoes,total_transacoes / total_rows * 100

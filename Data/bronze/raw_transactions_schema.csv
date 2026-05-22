@@ -1,0 +1,12 @@
+nome_coluna,tipo_dado,permite_nulo,descricao,origem_ou_expressao
+step,int,true,Unidade de tempo da transacao simulada,Coluna original do PaySim
+type,string,true,Tipo da transacao como CASH_IN CASH_OUT PAYMENT TRANSFER ou DEBIT,Coluna original do PaySim
+amount,double,true,Valor da transacao,Coluna original do PaySim
+nameOrig,string,true,Identificador da conta de origem,Coluna original do PaySim
+oldbalanceOrg,double,true,Saldo da conta de origem antes da transacao,Coluna original do PaySim
+newbalanceOrig,double,true,Saldo da conta de origem depois da transacao,Coluna original do PaySim
+nameDest,string,true,Identificador da conta de destino,Coluna original do PaySim
+oldbalanceDest,double,true,Saldo da conta de destino antes da transacao,Coluna original do PaySim
+newbalanceDest,double,true,Saldo da conta de destino depois da transacao,Coluna original do PaySim
+isFraud,int,true,Flag alvo indicando fraude confirmada,Coluna original do PaySim
+isFlaggedFraud,int,true,Flag indicando transacao marcada como fraude pelo simulador,Coluna original do PaySim

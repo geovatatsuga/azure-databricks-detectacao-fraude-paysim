@@ -1,0 +1,2 @@
+total_transacoes,total_fraudes,valor_total_transacionado,valor_total_fraude,ticket_medio_geral,ticket_medio_fraude,ticket_medio_normal,total_flagged_fraud,taxa_fraude_percentual,taxa_flagged_percentual,dataset
+6362620,8213,1.144392944759779E12,1.205641542783999E10,179861.90354913214,1467967.299140387,178197.0417274074,16,0.1291,2.51E-4,PaySim
