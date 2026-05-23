@@ -6,7 +6,7 @@ O pipeline organiza os dados em camadas Bronze, Silver e Gold, cria features de 
 
 ## Principais resultados
 
-- Dataset com `6,362,620` transacoes e `8,213` fraudes.
+- Dataset com `6,362,620` milhões transacoes e `8,213` fraudes.
 - Fraudes concentradas em `TRANSFER` e `CASH_OUT`.
 - Como a fraude e rara, a analise prioriza `PR-AUC`, `recall_fraud`, `precision_fraud`, `f1_fraud` e impacto financeiro simulado, nao apenas acuracia.
 - As features elevaram o PR-AUC da Decision Tree de `0.5345` para `0.9963`.
